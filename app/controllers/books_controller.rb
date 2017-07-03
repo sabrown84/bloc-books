@@ -1,6 +1,14 @@
-class BooksController < BlocWorks::controllers
+require 'pry'
+#require 'bloc_works'
+
+class BooksController < BlocWorks::Controller
+
   def welcome
     render :welcome, book: "Eloquent Ruby"
+  end
+
+  def index
+    render :index, books: Book.all
   end
 
   def create
@@ -8,11 +16,8 @@ class BooksController < BlocWorks::controllers
   end
 
   def show
-    render :welcome, book: "show"
-  end
-
-  def index
-    render :welcome, book: "index"
+    binding.pry
+    render :show, book: Book.find(1)
   end
 
   def update

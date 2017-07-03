@@ -1,9 +1,12 @@
 require "bloc_works"
+require 'bloc_record'
 
-module BlocBooks
+  $LOAD_PATH << File.join(File.dirname(__FILE__), "..", "app", "controllers")
+  $LOAD_PATH << File.join(File.dirname(__FILE__), "..", "app", "models")
 
-  $LOAD_PATH << FILE.join(File.dirname(__FILE__), "..", "app", "controllers")
-  
-  class Application < BlocWorks::Application
+  BlocRecord.connect_to("db/db.sqlite")
+
+  module BlocBooks
+    class Application < BlocWorks::Application
   end
 end

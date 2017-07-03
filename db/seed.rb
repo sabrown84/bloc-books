@@ -1,7 +1,7 @@
 require_relative '../app/models/book'
 require 'bloc_record'
 
-BlocRecord.connect_to('db/db.sqlite')
+BlocRecord.connect_to('db.sqlite')
 
 Book.create(
   name: "The Well-Grounded Rubyist",
