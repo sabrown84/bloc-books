@@ -1,5 +1,5 @@
 require 'pry'
-#require 'bloc_works'
+require 'bloc_works'
 
 class BooksController < BlocWorks::Controller
 
@@ -7,17 +7,18 @@ class BooksController < BlocWorks::Controller
     render :welcome, book: "Eloquent Ruby"
   end
 
-  def index
-    render :index, books: Book.all
-  end
-
   def create
     render :welcome, book: "create"
   end
 
+  def index
+    render :index, books: Book.all
+  end
+
   def show
+    book = Book.find(params['id'])
+    render :show, book: book
     binding.pry
-    render :show, book: Book.find(1)
   end
 
   def update

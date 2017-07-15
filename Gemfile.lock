@@ -41,6 +41,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bloc_record
   bloc_works!
   pry
   rack (~> 1.6)
